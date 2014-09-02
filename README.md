@@ -16,11 +16,11 @@ There is usually a delay of at least a couple seconds between turning Wi-Fi off 
 ## Installation
 
 1. Download the following files to ~/Downloads:
-  * a
-  * b
-  * c
+  * local.KeepWiFiOn.Daemon.plist
+  * local.KeepWiFiOn.Agent.plist
+  * turn_on_wifi
 2. Open Terminal and run the following commands:
 
-```
+  ```
 cd ~/Downloads
 ```
