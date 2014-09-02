@@ -15,7 +15,20 @@ There is usually a delay of at least a couple seconds between turning Wi-Fi off 
 
 ## Installation
 
+### Option 1 (simplest):
+
 1. Download the file install_KeepWiFiOn to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn`
-```
 
+Step 2 will download all the program files from this GitHub repository and install them.
+
+### Option 2 (slightly less simple):
+
+1. Download the following files to ~/Downloads:
+  a. install_KeepWiFiOn
+  b. local.KeepWiFiOn.Daemon.plist
+  c. local.KeepWiFiOn.Agent.plist
+  d. turn_on_wifi
+2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
+
+In this case Step 2 will 
