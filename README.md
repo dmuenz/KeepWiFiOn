@@ -48,4 +48,9 @@ Note that the uninstaller will only attempt to remove files created by the insta
 
 This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested KeepWiFiOn on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please [let me know][issue].
 
+[installer]: https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/install_KeepWiFiOn
+[uninstaller]: https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/uninstall_KeepWiFiOn
+[daemon]: https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/local.KeepWiFiOn.Daemon.plist
+[agent]: https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/local.KeepWiFiOn.Agent.plist
+[script]: https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/turn_on_wifi
 [issue]: https://github.com/dmuenz/KeepWiFiOn/issues/new
