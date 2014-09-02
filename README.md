@@ -22,7 +22,7 @@ KeepWiFiOn is only a band-aid solution, as it does not fix the underlying issue 
 1. Download the file install_KeepWiFiOn to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn`
 
-Step 2 will download all the program files from this GitHub repository and install them.
+Step 2 will download all the program files from this GitHub repository and install them.  After that you can delete the installer if you'd like.
 
 #### Option 2 (slightly less simple):
 
@@ -33,7 +33,7 @@ Step 2 will download all the program files from this GitHub repository and insta
   * turn_on_wifi
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
-In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads).
+In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads).  After installing you can delete all the downloaded files if you'd like.
 
 The advantage of Option 2 is that if something goes wrong during installation, you can try again without having to redownload the files every time.
 
