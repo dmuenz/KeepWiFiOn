@@ -22,7 +22,7 @@ KeepWiFiOn is only a band-aid solution, as it does not fix the underlying issue 
 1. Download the file [install_KeepWiFiOn][installer] (right click and save link target) to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn`
 
-Step 2 will download all the program files from this GitHub repository and install them.  After that you can delete the installer if you'd like.
+Step 2 will download all the program files from this GitHub repository and install them.  It may prompt you for your password, as it uses `sudo` to move the downloaded files around. After installation you can delete the installer if you'd like.
 
 #### Option 2 (slightly less simple):
 
