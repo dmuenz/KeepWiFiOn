@@ -1,2 +1,116 @@
 #!/bin/bash
+# Installer for KeepWiFiOn
+# Written by Daniel Muenz in 2014
 
+download=1
+if [[ $1 = -l || $1 = --local ]]; then
+  download=0
+elif [[ -n $1 ]]; then
+  echo "illegal argument: $1" 1>&2
+  echo "usage: ./install_KeepWiFiOn [-l|--local]"
+  exit 1
+fi
+
+
+filetypes=(daemon agent script)
+
+# File names, destination directories, and permissions
+daemon_params=(local.KeepWiFiOn.Daemon.plist /Library/LaunchDaemons/ 644)
+agent_params=(local.KeepWiFiOn.Agent.plist /Library/LaunchAgents/ 644)
+script_params=(turn_on_wifi /usr/libexec/ 755)
+
+get_param() {
+  filetype=$1
+  index=$2
+  subst=${filetype}_params[@]
+  params=(${!subst})
+  echo "${params[index]}"
+}
+
+
+if [[ $download -eq 1 ]]; then
+  
+  tmpdir=/tmp/KeepWiFiOn
+
+  # Set up a temp directory for downloading files
+  if [[ -d $tmpdir ]]; then
+    rm -f $tmpdir/*
+  else
+    mkdir -p $tmpdir
+  fi
+  cd $tmpdir
+
+  echo "Downloading files from GitHub..."
+  for filetype in ${filetypes[@]}; do
+    file=$(get_param $filetype 0)
+    curl -#O https://raw.githubusercontent.com/dmuenz/KeepWiFiOn/master/$file
+    if [[ $? -ne 0 ]] || grep -q '^Not Found$' $tmpdir/$file; then
+      echo "Failed to download file $file" 1>&2
+      echo "Aborting installation" 1>&2
+      rm -df $tmpdir/* $tmpdir
+      exit 2
+    fi
+  done
+
+else
+
+  # Make sure all files exist in pwd
+  echo "Looking for required files in current directory..." 1>&2
+  for filetype in ${filetypes[@]}; do
+    file=$(get_param $filetype 0)
+    if [[ ! -e $file ]]; then
+      echo "Cannot find file $file" 1>&2
+      echo "Only use argument $1 if you have all the necessary files" 1>&2
+      echo "Aborting installation" 1>&2
+      exit 2
+    fi
+  done
+
+fi
+
+move_or_copy_word=Moving
+move_or_copy_cmd=mv
+if [[ $download -eq 0 ]]; then
+  move_or_copy_word=Copying
+  move_or_copy_cmd=cp
+fi
+
+echo "$move_or_copy_word files into place and setting permissions..."
+for filetype in ${filetypes[@]}; do
+  file=$(get_param $filetype 0)
+  destdir=$(get_param $filetype 1)
+  perms=$(get_param $filetype 2)
+
+  errors=0
+  sudo $move_or_copy_cmd -f $file $destdir
+  errors=$((errors + $?))
+  sudo chown root $destdir$file
+  errors=$((errors + $?))
+  sudo chmod $perms $destdir$file
+  errors=$((errors + $?))
+
+  if [[ $errors -gt 0 ]]; then
+    echo "Failed to set attributes for file $file" 1>&2
+    echo "Aborting installation" 1>&2
+    exit 3
+  fi
+done
+
+
+echo "Loading daemon and agent into launchd..."
+for filetype in ${filetypes[@]:0:2}; do
+  file=$(get_param $filetype 0)
+  destdir=$(get_param $filetype 1)
+
+  launchctl load -wF $destdir$file
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to load $filetype" 1>&2
+    echo "Aborting installation" 1>&2
+    exit 4
+  fi
+done
+
+
+echo "Installation complete"
+echo "If you're feeling lucky, turn Wi-Fi off and see what happens"
+exit 0
