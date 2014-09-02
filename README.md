@@ -19,7 +19,7 @@ KeepWiFiOn is only a band-aid solution, as it does not fix the underlying issue 
 
 #### Option 1 (simplest):
 
-1. Download the file install_KeepWiFiOn to ~/Downloads
+1. Download the file [install_KeepWiFiOn][installer] to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn`
 
 Step 2 will download all the program files from this GitHub repository and install them.  After that you can delete the installer if you'd like.
@@ -27,10 +27,10 @@ Step 2 will download all the program files from this GitHub repository and insta
 #### Option 2 (slightly less simple):
 
 1. Download the following files to ~/Downloads:
-  * install_KeepWiFiOn
-  * local.KeepWiFiOn.Daemon.plist
-  * local.KeepWiFiOn.Agent.plist
-  * turn_on_wifi
+  * [install_KeepWiFiOn][installer]
+  * [local.KeepWiFiOn.Daemon.plist][daemon]
+  * [local.KeepWiFiOn.Agent.plist][agent]
+  * [turn_on_wifi][script]
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
 In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads).  After installing you can delete all the downloaded files if you'd like.
@@ -39,7 +39,7 @@ The advantage of Option 2 is that if something goes wrong during installation, y
 
 ## Uninstallation
 
-1. Down the file uninstall_KeepWiFiOn to ~/Downloads
+1. Down the file [uninstall_KeepWiFiOn][uninstaller] to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/uninstall_KeepWiFiOn`
 
 Note that the uninstaller will only attempt to remove files created by the installer, not files that you downloaded.
