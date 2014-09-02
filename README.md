@@ -31,4 +31,4 @@ Step 2 will download all the program files from this GitHub repository and insta
   * turn_on_wifi
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
-In this case Step 2 will 
+In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads).
