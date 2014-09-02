@@ -33,7 +33,7 @@ Step 2 will download all the program files from this GitHub repository and insta
   * [turn_on_wifi][script]
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
-In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads). The installer may prompt you for your password, as it uses sudo to move the downloaded files around. After installing you can delete all the downloaded files if you'd like.
+In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads). The installer may prompt you for your password, as it uses `sudo` to move the downloaded files around. After installing you can delete all the downloaded files if you'd like.
 
 The advantage of Option 2 is that if something goes wrong during installation, you can try again without having to redownload the files every time.
 
@@ -42,7 +42,7 @@ The advantage of Option 2 is that if something goes wrong during installation, y
 1. Down the file [uninstall_KeepWiFiOn][uninstaller] (right click and save link target) to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/uninstall_KeepWiFiOn`
 
-Note that the uninstaller will only attempt to remove files created by the installer, not files that you downloaded.  The uninstaller may prompt you for your password, as it uses sudo to remove the files created by the installer.
+Note that the uninstaller will only attempt to remove files created by the installer, not files that you downloaded.  The uninstaller may prompt you for your password, as it uses `sudo` to remove the files created by the installer.
 
 ## Disclaimer
 
