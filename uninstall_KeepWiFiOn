@@ -1,0 +1,38 @@
+#!/bin/bash
+# Uninstaller for KeepWiFiOn
+# Written by Daniel Muenz in 2014
+
+tmpdir=/tmp/KeepWiFiOn
+
+# Delete temp directory if it exists
+if [[ -d $tmpdir ]]; then
+  echo "Deleting temporary files..."
+  sudo rm -df $tmpdir/* $tmpdir
+fi
+
+# Files the installer may have created
+daemon=/Library/LaunchDaemons/local.KeepWiFiOn.Daemon.plist
+agent=/Library/LaunchAgents/local.KeepWiFiOn.Agent.plist
+script=/usr/libexec/turn_on_wifi
+
+if launchctl list | grep -q KeepWiFiOn; then
+  echo "Unloading daemon and agent from launchd..."
+  launchctl unload -w $(basename $daemon)
+  [[ $? -ne 0 ]] && echo "Failed to unload daemon" 1>&2
+
+  launchctl unload -w $(basename $agent)
+  [[ $? -ne 0 ]] && echo "Failed to unload agent" 1>&2
+fi
+
+if [[ -e $daemon || -e $agent || -e $script ]]; then
+  echo "Deleting daemon, agent, and script files..."
+  sudo rm -f $daemon $agent $script
+
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to delete files" 1>&2
+  fi
+fi
+
+echo "Uninstallation process complete"
+echo "If errors were reported, try rerunning"
+exit 0
