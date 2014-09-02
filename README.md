@@ -23,4 +23,5 @@ There is usually a delay of at least a couple seconds between turning Wi-Fi off 
 
   ```
 cd ~/Downloads
+mv 
 ```
