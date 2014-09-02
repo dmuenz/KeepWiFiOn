@@ -40,6 +40,8 @@ The advantage of Option 2 is that if something goes wrong during installation, y
 1. Down the file uninstall_KeepWiFiOn to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/uninstall_KeepWiFiOn`
 
+Note that the uninstaller will only attempt to remove files created by the installer, not files that you downloaded.
+
 ## Disclaimer
 
 This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested this software on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please [let me know][issue].
