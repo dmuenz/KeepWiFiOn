@@ -22,7 +22,7 @@ There is usually a delay of at least a couple seconds between turning Wi-Fi off 
 
 Step 2 will download all the program files from this GitHub repository and install them.
 
-### Option 2 (slightly less simple):
+#### Option 2 (slightly less simple):
 
 1. Download the following files to ~/Downloads:
   * install_KeepWiFiOn
@@ -32,3 +32,6 @@ Step 2 will download all the program files from this GitHub repository and insta
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
 In this case Step 2 will use the files you already downloaded.  Note that all 4 downloaded files must be in the same directory (e.g. ~/Downloads).
+
+The advantage of Option 2 is that if something goes wrong during installation, you can try again without having to redownload the files every time.
+
