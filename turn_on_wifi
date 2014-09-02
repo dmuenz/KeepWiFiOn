@@ -1,0 +1,38 @@
+#!/bin/bash
+# Turn Wi-Fi back on if it's off
+# Written by Daniel Muenz in 2014
+
+# Get the Wi-Fi interface name (e.g., en0 or en1).
+# This should match the name found near AirPort's PowerEnabled key
+# in /Library/Preferences/SystemConfiguration/preferences.plist
+en=$(/usr/sbin/networksetup -listallhardwareports | awk '$3=="Wi-Fi" {getline; print $2}')
+if [[ -z $en ]]; then
+  en=en1
+  echo "Could not find Wi-Fi interface name; will assume $en" 1>&2
+fi
+
+wifi_get() {
+  /usr/sbin/networksetup -getairportpower $en | awk '{print $NF}'
+}
+
+wifi_set() {
+  /usr/sbin/networksetup -setairportpower $en $1
+}
+
+notify() {
+  /usr/bin/osascript -e "display notification \"$@\" with title \"Wi-Fi Status\""
+  echo "$@" 1>&2
+}
+
+
+# Set Wi-Fi to 'on', but only if it's currently off
+if [[ $(wifi_get) = Off ]]; then
+  wifi_set On
+  # Wait a little bit, then check if Wi-Fi is now on
+  sleep 1
+  if [[ $(wifi_get) = On ]]; then
+    notify "Wi-Fi has been forced back on"
+  else
+    notify "Wi-Fi could not be turned back on"
+  fi
+fi
