@@ -6,7 +6,7 @@ On OS X, if Wi-Fi gets turned off, then automatically turn it back on.
 ## What's the point of this?
 Mac OS X Mavericks created a small problem for some users of antiquated MacBook Pros: when Wi-Fi gets turned off, the computer freezes within a few minutes.  Rebooting does not help, because upon boot, the computer checks the Wi-Fi state, sees that it's off, and freezes again.
 
-KeepWiFiOn prevent your computer from freezing by
+KeepWiFiOn prevents your computer from freezing by:
 
 1. Turning Wi-Fi on automatically every time your computer boots
 2. Monitoring the status of Wi-Fi during regular computer usage, and forcing Wi-Fi back on whenever it gets turned off
