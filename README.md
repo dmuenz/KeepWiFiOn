@@ -13,6 +13,8 @@ KeepWiFiOn prevents your computer from freezing by:
 
 There is usually a delay of at least a couple seconds between turning Wi-Fi off and the computer freezing, so KeepWiFiOn should have enough time to get in there and save your computer.
 
+KeepWiFiOn is only a band-aid solution, as it does not fix the underlying issue of why turning Wi-Fi off freezes the computer for some users.  Perhaps only Apple can address that, but in the meantime KeepWiFiOn can spare you some frustration.
+
 ## Installation
 
 #### Option 1 (simplest):
@@ -44,6 +46,6 @@ Note that the uninstaller will only attempt to remove files created by the insta
 
 ## Disclaimer
 
-This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested this software on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please [let me know][issue].
+This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested KeepWiFiOn on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please [let me know][issue].
 
 [issue]: https://github.com/dmuenz/KeepWiFiOn/issues/new
