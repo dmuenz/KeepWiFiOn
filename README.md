@@ -35,3 +35,7 @@ In this case Step 2 will use the files you already downloaded.  Note that all 4 
 
 The advantage of Option 2 is that if something goes wrong during installation, you can try again without having to redownload the files every time.
 
+## Uninstallation
+
+1. Down the file uninstall_KeepWiFiOn to ~/Downloads
+2. Open Terminal and run the command `~/Downloads/uninstall_KeepWiFiOn`
