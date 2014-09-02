@@ -25,10 +25,10 @@ Step 2 will download all the program files from this GitHub repository and insta
 ### Option 2 (slightly less simple):
 
 1. Download the following files to ~/Downloads:
-  a. install_KeepWiFiOn
-  b. local.KeepWiFiOn.Daemon.plist
-  c. local.KeepWiFiOn.Agent.plist
-  d. turn_on_wifi
+  * install_KeepWiFiOn
+  * local.KeepWiFiOn.Daemon.plist
+  * local.KeepWiFiOn.Agent.plist
+  * turn_on_wifi
 2. Open Terminal and run the command `~/Downloads/install_KeepWiFiOn --local`
 
 In this case Step 2 will 
