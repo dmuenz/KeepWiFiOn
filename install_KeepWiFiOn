@@ -54,6 +54,8 @@ if [[ $download -eq 1 ]]; then
 
 else
 
+  cd $(dirname $0)
+
   # Make sure all files exist in pwd
   echo "Looking for required files in current directory..." 1>&2
   for filetype in ${filetypes[@]}; do
@@ -61,6 +63,7 @@ else
     if [[ ! -e $file ]]; then
       echo "Cannot find file $file" 1>&2
       echo "Only use argument $1 if you have all the necessary files" 1>&2
+      echo "  and make sure they're in the same path as this installer" 1>&2
       echo "Aborting installation" 1>&2
       exit 2
     fi
