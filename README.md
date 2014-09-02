@@ -26,7 +26,7 @@ Step 2 will download all the program files from this GitHub repository and insta
 
 #### Option 2 (slightly less simple):
 
-1. Download the following files to ~/Downloads:
+1. Download the following files (right click and save link targets) to ~/Downloads:
   * [install_KeepWiFiOn][installer]
   * [local.KeepWiFiOn.Daemon.plist][daemon]
   * [local.KeepWiFiOn.Agent.plist][agent]
@@ -39,7 +39,7 @@ The advantage of Option 2 is that if something goes wrong during installation, y
 
 ## Uninstallation
 
-1. Down the file [uninstall_KeepWiFiOn][uninstaller] to ~/Downloads
+1. Down the file [uninstall_KeepWiFiOn][uninstaller] (right click and save link target) to ~/Downloads
 2. Open Terminal and run the command `~/Downloads/uninstall_KeepWiFiOn`
 
 Note that the uninstaller will only attempt to remove files created by the installer, not files that you downloaded.
