@@ -42,4 +42,6 @@ The advantage of Option 2 is that if something goes wrong during installation, y
 
 ## Disclaimer
 
-This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested this software on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please let me know.
+This software is meant to be run on OS X Mavericks (and maybe later OSes, if the Wi-Fi bug persists).  I have only tested this software on my computer, a MacBook Pro 17" from late 2007, running OS X 10.9.4.  I obviously cannot guarantee that it will work for you.  If you do encounter any issues, please [let me know][issue].
+
+[issue]: https://github.com/dmuenz/KeepWiFiOn/issues/new
